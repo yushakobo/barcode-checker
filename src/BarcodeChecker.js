@@ -26,6 +26,9 @@ function useTimer() {
 function useBarcodeReader(callback) {
     const [currentCode, setCurrentCode] = useState("")
     const handler = useCallback((ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+
         const digit = ev.key
         console.log(digit)
 
@@ -43,6 +46,7 @@ function useBarcodeReader(callback) {
             setCurrentCode(p => `${p}${digit}`)
         }
         console.log(currentCode)
+        window.focus()
     }, [callback, currentCode])
 
     return { handler }
@@ -62,16 +66,19 @@ function BarcodeChecker() {
 
         if (firstCode === secondCode) {
             okAudio.play()
-            setViewState("ok")
+            // setViewState("ok")
         } else {
             ngAudio.play()
-            setViewState("ng")
+            // setViewState("ng")
         }
-        setTimer(500, () => {
-            setViewState("normal");
-            setFirstCode('');
-            setSecondCode('');
-        })
+        setFirstCode('');
+        setSecondCode('');
+        // setTimer(500, () => {
+        //     setViewState("normal");
+        //     setFirstCode('');
+        //     setSecondCode('');
+        //     window.focus();
+        // })
     }, [firstCode, secondCode, okAudio, ngAudio, setTimer])
 
     const barcodeReadingCompleted = useCallback((barcode) => {
