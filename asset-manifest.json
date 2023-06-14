@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/barcode-checker/static/css/main.39be3896.css",
-    "main.js": "/barcode-checker/static/js/main.2ba8ef1b.js",
+    "main.js": "/barcode-checker/static/js/main.7aeec157.js",
     "index.html": "/barcode-checker/index.html",
     "main.39be3896.css.map": "/barcode-checker/static/css/main.39be3896.css.map",
-    "main.2ba8ef1b.js.map": "/barcode-checker/static/js/main.2ba8ef1b.js.map"
+    "main.7aeec157.js.map": "/barcode-checker/static/js/main.7aeec157.js.map"
   },
   "entrypoints": [
     "static/css/main.39be3896.css",
-    "static/js/main.2ba8ef1b.js"
+    "static/js/main.7aeec157.js"
   ]
 }
